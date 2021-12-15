@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Rigidbody playerRb;
     public float turnSpeed;
+    public bool gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,9 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Player has collided with enemy.");
+            Debug.Log("Game Over");
+            gameOver = true;
+
         }
     }
 
